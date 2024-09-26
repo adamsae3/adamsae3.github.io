@@ -4,7 +4,7 @@ editor: visual
 format: revealjs
 ---
 
-## slide 1
+## loading tidyverse
 
 
 
@@ -15,3 +15,69 @@ library(tidyverse)
 library(tidybiology)
 ```
 
+## loading dataframes
+
+```{r}
+#| echo: true
+data(happy)
+data(happy_join_one)
+data(happy_full)
+```
+
+## taking a closer look at the data frames
+
+```{r}
+#| echo: true
+glimpse(happy)
+glimpse(happy_join_one)
+glimpse(happy_full)
+```
+
+We know we can joing these data frames because they all share the column "ladder score."
+
+## Combining "happy" and "happy_join_one" data frames by row
+
+```{r}
+#| echo: true
+
+bind_rows(happy, happy_join_one)
+```
+
+## Checking to make sure that "happy" and "happy_join_one" data frames have equal numbers of rows
+
+```{r}
+#| echo: true
+
+nrow(happy) == nrow(happy_join_one)
+```
+
+These two data frames do have equal numbers of rows
+
+## Combining the datasets "happy" and "happy_join_one" by column
+
+```{r}
+#| echo: true
+
+bind_cols(happy, happy_join_one)
+```
+
+These dataframes both have columns called "country_name."
+
+## Joining the dataframes with a cleaner output
+
+```{r}
+#| echo: true
+
+happy %>%
+  inner_join(happy_join_one)
+```
+This function combines the dataframes so that they share a column labeled "country_names."
+
+```{r}
+#| echo: true
+
+happy_full %>%
+  anti_join(happy)
+```
+
+This function filters out all countries from "happy_full" that are also in "happy"
