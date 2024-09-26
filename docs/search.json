@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "tidyprobs.html#slide-1",
-    "href": "tidyprobs.html#slide-1",
-    "title": "tidyverse probs",
-    "section": "slide 1",
-    "text": "slide 1\n\nlibrary(tidyverse)\nlibrary(tidybiology)"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About me",
-    "section": "",
-    "text": "My name is Anna Adams. I am a junior sociology major at Appalachian State University.\n\n\n\ncats"
-  },
-  {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "My Projects",
-    "section": "",
-    "text": "tidyverse  seared foie gras and pheasant ballontine\nslides"
-  },
-  {
     "objectID": "tidyprobs.html#loading-tidyverse",
     "href": "tidyprobs.html#loading-tidyverse",
     "title": "tidyverse probs",
@@ -68,5 +47,19 @@
     "title": "tidyverse probs",
     "section": "Joining the dataframes with a cleaner output",
     "text": "Joining the dataframes with a cleaner output\n\nhappy %&gt;%\n  inner_join(happy_join_one)\n\n# A tibble: 5 × 5\n  country_name ladder_score   gdp social_support healthy_life_expectancy\n  &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt;                   &lt;dbl&gt;\n1 Iraq                 4.85  9.24          0.746                    60.6\n2 Comoros              4.29  8.03          0.626                    57.3\n3 Panama               6.18 10.4           0.896                    69.7\n4 Maldives             5.20  9.83          0.913                    70.6\n5 Spain                6.49 10.6           0.932                    74.7\n\n\nThis function combines the dataframes so that they share a column labeled “country_names.”\n\nhappy_full %&gt;%\n  anti_join(happy)\n\n# A tibble: 144 × 20\n   country_name region          ladder_score standard_error_of_la…¹ upperwhisker\n   &lt;chr&gt;        &lt;chr&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;        &lt;dbl&gt;\n 1 Finland      Western Europe          7.84                  0.032         7.90\n 2 Denmark      Western Europe          7.62                  0.035         7.69\n 3 Switzerland  Western Europe          7.57                  0.036         7.64\n 4 Iceland      Western Europe          7.55                  0.059         7.67\n 5 Netherlands  Western Europe          7.46                  0.027         7.52\n 6 Norway       Western Europe          7.39                  0.035         7.46\n 7 Sweden       Western Europe          7.36                  0.036         7.43\n 8 Luxembourg   Western Europe          7.32                  0.037         7.40\n 9 New Zealand  North America …         7.28                  0.04          7.36\n10 Austria      Western Europe          7.27                  0.036         7.34\n# ℹ 134 more rows\n# ℹ abbreviated name: ¹​standard_error_of_ladder_score\n# ℹ 15 more variables: lowerwhisker &lt;dbl&gt;, logged_gdp_per_capita &lt;dbl&gt;,\n#   social_support &lt;dbl&gt;, healthy_life_expectancy &lt;dbl&gt;,\n#   freedom_to_make_life_choices &lt;dbl&gt;, generosity &lt;dbl&gt;,\n#   perceptions_of_corruption &lt;dbl&gt;, ladder_score_in_dystopia &lt;dbl&gt;,\n#   explained_by_log_gdp_per_capita &lt;dbl&gt;, explained_by_social_support &lt;dbl&gt;, …\n\n\nThis function filters out all countries from “happy_full” that are also in “happy”"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "My name is Anna Adams. I am a junior sociology major at Appalachian State University.\n\n\n\ncats"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "My Projects",
+    "section": "",
+    "text": "slides  seared foie gras and pheasant ballontine"
   }
 ]
