@@ -1,23 +1,23 @@
 [
   {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Project 1\nProject 2\nProject 3\nProject 4"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quarto Web Demo",
-    "section": "",
-    "text": "This is the main landing page!\n\nTo learn more about geezers.\nTo learn more about Quarto websites."
+    "objectID": "tidyprobs.html#slide-1",
+    "href": "tidyprobs.html#slide-1",
+    "title": "tidyverse probs",
+    "section": "slide 1",
+    "text": "slide 1\n\nlibrary(tidyverse)\nlibrary(tidybiology)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About Me",
+    "title": "About me",
     "section": "",
-    "text": "This is where you get to write about yourself.\nIf your favorite color is purple you might show a graph that uses purple."
+    "text": "My name is Anna Adams. I am a junior sociology major at Appalachian State University.\n\n\n\ncats"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "My Projects",
+    "section": "",
+    "text": "tidyverse  seared foie gras and pheasant ballontine\nslides"
   }
 ]

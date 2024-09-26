@@ -1,8 +1,9 @@
 ---
-title: "Projects"
+title: "My Projects"
 ---
 
-* [Project 1]()
-* [Project 2]()
-* [Project 3]()
-* [Project 4]()
+* [tidyverse]()
+![seared foie gras and pheasant ballontine](./Pics/foiegras.jpg)
+seared foie gras and pheasant ballontine
+
+* [slides](tidyprobs.qmd)

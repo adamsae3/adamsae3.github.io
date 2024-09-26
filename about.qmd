@@ -1,14 +1,8 @@
 ---
-title: "About Me"
+title: "About me"
 ---
 
-This is where you get to write about yourself.
+My name is Anna Adams. I am a junior sociology major at Appalachian State University.
 
-If your favorite color is purple you might show a graph that uses purple.
-
-```{r}
-#| echo: false
-set.seed(123)
-hist(rnorm(10000), col = "purple", main = "Purple Histogram", xlab = "")
-```
+![cats](./Pics/ribboncat.jpg)
 

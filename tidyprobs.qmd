@@ -1,0 +1,17 @@
+---
+title: "tidyverse probs"
+editor: visual
+format: revealjs
+---
+
+## slide 1
+
+
+
+
+```{r}
+#| echo: true
+library(tidyverse)
+library(tidybiology)
+```
+
