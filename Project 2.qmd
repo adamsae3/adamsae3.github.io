@@ -1,0 +1,16 @@
+---
+title: "Project2"
+output: html_document
+date: "2024-12-10"
+---
+```{r}
+library(tidyverse)
+library(readr)
+Readers_Data <-read_csv("/home/students/adamsae3/git_repos/adamsae3.github.io/Readers_Data.csv", show_col_types = FALSE)
+```
+
+```{r}
+ggplot(Readers_Data, aes(Weekly_Reading_Time, fill = Favorite_Book_Genre ))+
+  geom_histogram()
+``` 
+

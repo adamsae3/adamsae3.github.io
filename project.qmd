@@ -2,6 +2,7 @@
 title: "My Projects"
 ---
 * [slides](tidyprobs.qmd)
+* [Final Project](Project 2.qmd)
 ![seared foie gras and pheasant ballontine](./Pics/foiegras.jpg)
 seared foie gras and pheasant ballontine
 
