@@ -9,8 +9,95 @@ library(readr)
 Readers_Data <-read_csv("/home/students/adamsae3/git_repos/adamsae3.github.io/Readers_Data.csv", show_col_types = FALSE)
 ```
 
+## For this project, I imagined that I was a librarian trying to maximize the turnout at my weekly bookclub. I used the data frame "Readers_Data," which shows data for 65 participants. For each participant, an Age and gender are reported as well as a favorite book genre, weekly reading time, and the way that reading affects each participant's mood.  
+
 ```{r}
-ggplot(Readers_Data, aes(Weekly_Reading_Time, fill = Favorite_Book_Genre ))+
-  geom_histogram()
+Readers_Data
+```
+
+
+```{r}
+#| echo : FALSE
+
+library(RColorBrewer)
+ggplot(Readers_Data, aes(Gender, fill = Gender))+
+  geom_bar()+
+  facet_wrap(~Favorite_Book_Genre)+
+  theme_bw()+
+  theme(axis.title=element_blank(), legend.position ="bottom" )+
+scale_fill_brewer(palette= "Pastel1", name = "Gender", labels = c("Female", "Male"))+
+  labs(title = "Genre Distribution Across Gender")
+  
+  
 ``` 
+
+This is  a bar plot showing the number of readers of each gender, facet wrapped by genre.
+
+### Based on this plot, we can see that men and women read science books equally as often and men were significantly more likely than women to read Self-Help books and less likely to read Romance. (yikes!) This tells me it may be useful to offer separate reading groups for men and women and let them choose their own books.
+
+
+```{r}
+
+ggplot(Readers_Data, aes(Age, color= Gender))+
+  geom_density()+
+  facet_wrap(~Favorite_Book_Genre)
+  
+``` 
+
+This is a density plot that shows the percentage of readers of each age. It is facet wrapped by genre and each graph has separate lines for each gender. This graph helps us visualize the demographics of readers of each genre. 
+
+### Based on this plot, we can see that women between the ages of 18 and 30 were significantly more likely to read self-help books than anyone of any other age or gender and 5 to 10 percent of all participants of either gender between the ages of 35 and 50 read history books.
+
+### In other words, the Self-Help genre is particularly popular among young women and history books are popular among middle aged readers. I could separate my book clubs by age group.
+```{r}
+library(vioplot)
+```
+
+```{r}
+MaleData <- Readers_Data%>%
+  filter(Gender == "m")
+FemaleData <- Readers_Data %>%
+  filter(Gender == "f")
+
+FemaleData
+MaleData
+```
+### Here, I've loaded the vioplot package so I can make a split violin plot in the next step. I also created 2 new dataframes, one that only shows data for Men and one that only shows data for women. I named them "MaleData", and "FemaleData" respectively. This way I can plot the two datasets side by side for a direct comparison.
+
+```{r}
+vioplot(Age~Weekly_Reading_Time, col="powderblue", data=MaleData, PlotCentre= "line", side="right", xlab = "Weekly Reading Time (hours)", main= "Demographics of Weekly Reading Time")+
+vioplot(Age~Weekly_Reading_Time, col= "pink", data=FemaleData, side="left", add=TRUE)
+legend("topright", fill = c("pink", "powderblue"), legend = c("Female", "Male"), title = "Gender")+
+  geom_smooth()+
+theme_bw()
+
+```
+This is a split violin plot showing the relationship between weekly reading time and age, with separate visualizations for the male and female data.
+
+### It seems younger readers are more likely to have higher weekly reading times. It also seems that there is no strong correlation between gender and weekly reading time. This tells me that if I decide to offer separate book clubs for different age groups, I might want to suggest longer books to younger readers.
+
+```{r}
+library(ggbeeswarm)
+```
+
+```{r}
+ggplot(Readers_Data, aes(Mood_Impact, Favorite_Book_Genre, alpha =.9))+
+  geom_beeswarm(aes(color=Weekly_Reading_Time, size=Weekly_Reading_Time), cex=3)+
+  labs(size= element_blank(), color="Weekly Reading Time(hours)", y="Genre", x="Mood")+
+  theme_bw()
+```
+This is a bee swarm plot that shows the relationship between participants' favorite genres, their weekly reading times, and the way they reported reading to affect their mood.
+
+### We can see here that weekly reading time has a strong correlation with reported mood. Readers who read for longer periods of time are significantly more likely to report that reading has a positive effect on their mood. We can also see that nobody who liked biographies or history or scence books reported that reading had a positive effect on their mood and that everyone who likes fantasy and romance reported that reading has a positive effect on their mood.
+
+### Based on this data, I hypothesize that I can increase the enjoyment of book club by letting them read fantasy and romance books with high page counts!
+
+
+
+
+
+
+
+
+
 
